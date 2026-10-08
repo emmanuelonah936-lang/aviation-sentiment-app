@@ -14,13 +14,28 @@ except Exception as e:
     st.stop()
 
 st.title("✈️ Aviation Sentiment Analysis")
-st.write("Type a passenger review and check the sentiment.")
+st.markdown(
+    "<p style='color:#94a3b8; font-size:1rem;'>"
+    "Type a passenger review and check the sentiment."
+    "</p>",
+    unsafe_allow_html=True,
+)
 
-# Faint examples users can type over
-placeholder_text = (
-    "The flight was delayed and baggage lost\n"
-    "Amazing crew, love it\n"
-    "Bad flight, Good flight"
+# Faint example users can type over
+placeholder_text = "e.g. The flight was delayed and baggage lost"
+
+# Make the placeholder fainter
+st.markdown(
+    """
+    <style>
+    textarea::placeholder {
+        color: #cbd5e1 !important;
+        opacity: 1 !important;
+        font-style: italic;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
 )
 
 review = st.text_area(
