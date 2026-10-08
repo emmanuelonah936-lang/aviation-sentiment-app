@@ -16,8 +16,12 @@ except Exception as e:
 st.title("✈️ Aviation Sentiment Analysis")
 st.write("Type a passenger review and check the sentiment.")
 
-# Faint example shown as placeholder (users can type over it)
-placeholder_text = "e.g. Flight was on time and staff were friendly."
+# Faint examples users can type over
+placeholder_text = (
+    "The flight was delayed and baggage lost\n"
+    "Amazing crew, love it\n"
+    "Bad flight, Good flight"
+)
 
 review = st.text_area(
     "Passenger review",
